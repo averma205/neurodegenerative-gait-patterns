@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Plot of Stride Interval Standard Deviations</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <link rel="stylesheet" href="style.css"></style>
+</head>
+<body>
+    <h1>Writeup</h1>
+    <h2>1. What have you done so far?</h2>
+    <p>We have created a box and whisker plot modeling, for every disease, the inconsistency in footsteps. This is measured by finding the standard deviation in every left step in every patient. Data points closer to 0 indicate a more balanced gait, and since we’ve create the boxplots for every subject in every disease group, it will show the distribution of asymmetry over each disease. This would also help viewers understand the outliers and overall trends of the data, rather than looking at just aggregated values (for example, mean/median). Using a tooltip, viewers will be able to hover every data point to see the exact standard deviation. We have also come up with several other visualizations that we plan to incorporate for our final submission, and listed them below.</p>
+    <h2>2. What will be the most challenging of your project to design and why?</h2>
+    <p>The most challenging aspect of our project was designing and modifying the interactive capabilities of our webpage in order to properly display the visualizations of walking patterns. We aim to display iconography representing the walking patterns of different groups. One visualization we will create is showing a trail of footsteps representing the gaits of individual subjects. This will be a clear way to understand gait asymmetry. The challenging part will be to accurately show the progression of the footsteps. </p>
+    <h1>Completed Visualization</h1>
+    <h2>Which Neurological Conditions Cause the Most Unstable Walking Patterns?</h2>
+    <p>This box plot visualizes the standard deviations of left stride intervals for patinets in different disease groups (ALS, Huntington’s, Parkinson’s, and Control). A higher standard deviation indicates greater variability in stride, which correlates with instability in gait. Values closer to 0 indicate a more balanced gait.</p>
+    <p>The x-axis is on a log scale to better represent the wide range of standard deviation values while also preserving relative differences.</p>
+    <p>Hover over the dots to learn more details about the exact patient or hover over the boxplot to learn more about the distribution of each disease group.</p>
+    <div id="chart"></div>
+    <h1>Incomplete Visualizations</h1>
+    <h2>How Do Different Neurodegenerative Diseases Disrupt Gait Patterns, and Which Metrics Reveal the Biggest Differences?</h2>
+    <p>We will be making a radial chart to compare various gait metrics for all four groups (ALS, Parkinson’s, Huntington’s) at once. This is a better alternative than a multi-line plot. We will be comparing the following metrics: Left Swing Interval (% of stride), Right Swing Interval (% of stride), Left Stance Interval (% of stride), Right Stance Interval (% of stride), Double Support Interval (sec), Double Support Interval (% of stride). Every group would be overlaid with a different color, allowing viewers to understand the distribution of subjects’ gait metrics. It would be a compact, easily-interpretable way of understanding the data.</p>
+    <h2>How Does the Gait Symmetry Index Differ in Individuals with Neurodegenerative Diseases and what does that indicate?</h2>
+    <p>A shoe icon can dynamically represent gait asymmetry by showing how the left and right foot are moving in relation to the other, whether it is more left-aligned or right-aligned. This would provide an intuitive and visual understanding of gait imbalances, which could be crucial for early diagnosis and treatment evaluation. The shoe icon would move in sync with recorded gait data. It would display weight distribution and alignment during walking like if left foot dominates, the icon leans left, if right foot dominates, the icon leans right, If balanced, it stays neutral.
+        Using stride intervals, stance intervals, and swing intervals, we can calculate a gait symmetry index (GSI) and show it as an interactive feature like a tooltip when we hover over the shoe icons 
+        GSI = (2 * | Left - Right |)  / (Left + Right) 
+        Higher values indicate greater imbalance and lower values indicate more symmetrical gait.</p>
+    <h2>How Does Stride Interval Vary Across Neurological Disorders?</h2>
+    <img src="assets/avg-stride.jpeg">
+    <script src="script.js"></script>
+</body>
+</html>
+
