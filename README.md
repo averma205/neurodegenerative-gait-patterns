@@ -1,1 +1,1 @@
-# dsc106-final-project
+# Analyzing Walking Patterns in Neurodegenerative Disease Patients
